@@ -1,0 +1,69 @@
+@import "tailwindcss";
+
+@layer theme {}
+
+@layer base {
+  html {
+    font-family: "Poppins", sans-serif;
+  }
+
+  #root {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+
+  h1,
+  h2 {
+    font-size: 2.5rem;
+    line-height: 2rem;
+    color: #96C0B7;
+    margin-bottom: 0.75rem;
+    letter-spacing: 0.025em;
+  }
+
+  h3 {
+    color: white;
+    font-size: 2rem;
+    font-weight: medium;
+  }
+
+  h4 {
+    font-size: 1.5rem;
+    font-weight: medium;
+    color: white;
+    margin-bottom: 1.5rem;
+  }
+}
+
+@layer components {
+  .grid-layout-category {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+
+  .grid-layout-meal {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+
+  .category-card {
+    width: 250px;
+    text-decoration: none;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+  }
+
+  /* Шахматний порядок кольорів */
+  .chess-board.even {
+    background-color: #D4DFC7;
+  }
+
+  .chess-board.odd {
+    background-color: #96C0B7;
+  }
+}
