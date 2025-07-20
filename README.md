@@ -1,69 +1,77 @@
-# React + TypeScript + Vite
+# 🍲 Projekt: Tasty V2
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Diese Webanwendung ermöglicht es Benutzern, verschiedene Essenskategorien und detaillierte Rezepte zu durchsuchen sowie Gerichte nach Namen zu suchen. Das Projekt wurde im Rahmen einer Frontend-Ausbildung mit **React**, **TypeScript** und **Vite** umgesetzt.
 
-Currently, two official plugins are available:
+🔗 **Live-Demo**: [tinabk-tasty-v2.netlify.app](https://tinabk-tasty-v2.netlify.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🧰 Verwendete Technologien & Tools
 
-## Expanding the ESLint configuration
+-   ⚛️ **React** – Komponentenbasiertes JavaScript-Framework für die Benutzeroberfläche.
+-   🟦 **TypeScript** – Typisiertes Superset von JavaScript für bessere Codequalität und Zuverlässigkeit.
+-   ⚡ **Vite** – Moderner und schneller Build- und Entwicklungsserver.
+-   🎨 **Tailwind CSS** – Utility-First CSS-Framework für schnelles und responsives Design.
+-   🗃️ **Modulare Komponentenstruktur** – Für Wiederverwendbarkeit und Code-Klarheit.
+-   🧠 **REST API ([TheMealDB API](https://www.themealdb.com/api.php))** – Zur dynamischen Datenabfrage von Kategorien und Gerichten.
+-   🔠 **Google Fonts: Poppins** – Für eine moderne Typografie.
+-   🧩 **Eigene Interfaces (`ICategory.ts`, `IMeal.ts`)** – Zur Definition der Datenstruktur.
+-   🛠️ **VS Code**, **Git** & **GitHub** – Als Entwicklungsumgebung und zur Versionskontrolle.
+-   🔄 **React Router DOM** – Für Navigation und Routing in der Single-Page-Anwendung.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🔧 Funktionen
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### 📋 Kategorieliste anzeigen
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+-   Auf der Startseite werden alle verfügbaren Essenskategorien in einem Raster mit einem einzigartigen Schachbrettmuster angezeigt.
+-   Beim Klick auf eine Kategorie öffnet sich die Detailansicht mit einer Liste der Gerichte dieser Kategorie.
+-   Eine "Zufällig" Kategorie wurde hinzugefügt, um ein zufällig ausgewähltes Gericht anzuzeigen.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### 🔍 Gerichtssuche
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+-   Der Header enthält ein Suchfeld, mit dem Benutzer Gerichte nach Namen suchen können.
+-   Die Suchergebnisse werden auf einer separaten Seite angezeigt.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### 🍽️ Gerichtsliste nach Kategorie/Suche
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+-   Zeigt eine Liste von Gerichten mit Bild und Namen an.
+-   Gerichtsnamen werden auf eine bestimmte Länge gekürzt, um Überlauf zu vermeiden.
+-   Beim Klick auf ein Gericht öffnet sich dessen Detailansicht.
+
+### 📝 Gerichtsdetails
+
+-   Zeigt detaillierte Informationen über ein ausgewähltes Gericht: Name, Beschreibung, Zutaten, Anweisungen, YouTube-Video-Link (falls vorhanden) und Quelle.
+-   Anweisungen werden als Aufzählungspunkte für bessere Lesbarkeit angezeigt.
+
+### 🌀 Lade- und Fehlerzustände
+
+-   Während des Ladens von Daten wird ein animierter Ladeindikator angezeigt.
+-   Im Falle eines Datenladefehlers wird eine Fehlermeldung angezeigt.
+
+### 🏠 Navigation
+
+-   "Home"-Button (Logo) zur Rückkehr zur Startseite.
+-   Link zu einem zufälligen Gericht.
+
+## Kontaktinformationen
+
+Bei Fragen oder Anregungen können Sie mich gerne kontaktieren:
+
+-   **E-Mail**: barshchevskak@gmail.com
+-   **GitHub**: [TinaBK24](https://github.com/TinaBK24)
+
+## Screenshots
+
+### 🔻 Home
+
+![Home](./public/img/Home.png)
+
+### 🔻 Kategorieseite (Gerichtsliste)
+
+![Category List](./public/img/CategoryList.png)
+
+### 🔻 Gerichtsdetails
+
+![Meal Details](./public/img/MealDetails.png)
+
+### 🔻 Suchergebnisseite
+
+![Search Results](./public/img/SearchResults.png)

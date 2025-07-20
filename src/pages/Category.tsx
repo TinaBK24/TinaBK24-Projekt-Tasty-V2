@@ -15,6 +15,7 @@ const Category = () => {
         setError(null)
         try {
             const data = await fetchMealsByCategory(categoryName)
+            console.log("Category.tsx: Fetched meals data:", data)
             setMeals(data)
         } catch (err: unknown) {
             if (err instanceof Error) {
@@ -28,6 +29,7 @@ const Category = () => {
     }
 
     useEffect(() => {
+        console.log("Category.tsx: useParams categoryName:", categoryName)
         if (categoryName) {
             loadMeals(categoryName)
         } else {
@@ -36,10 +38,12 @@ const Category = () => {
         }
     }, [categoryName])
 
+    console.log("Category.tsx: Rendering MealsList with categoryName prop:", categoryName)
+
     return (
         <section>
             <h2>{`Everything ${categoryName}`}</h2>
-            <MealsList meals={meals} loading={loading} error={error} />
+            <MealsList key={categoryName} meals={meals} loading={loading} error={error} categoryName={categoryName} />
         </section>
     );
 }

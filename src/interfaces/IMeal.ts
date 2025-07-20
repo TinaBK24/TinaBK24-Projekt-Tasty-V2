@@ -2,7 +2,7 @@ export interface IMeal {
     idMeal: string;
     strMeal: string;
     strDrinkAlternate: string | null;
-    strCategory: string;
+    strCategory: string | null;
     strArea: string;
     strInstructions: string;
     strMealThumb: string;

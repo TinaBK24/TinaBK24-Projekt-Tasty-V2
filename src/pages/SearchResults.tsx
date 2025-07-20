@@ -43,7 +43,7 @@ export default function SearchResults() {
     return (
         <section>
             <h2>Search Results for "{searchQuery}"</h2>
-            <MealsList meals={meals} loading={loading} error={error} />
+            <MealsList meals={meals} loading={loading} error={error} categoryName={null} />
         </section>
     )
 }
