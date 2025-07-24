@@ -99,9 +99,9 @@ const MealsList: React.FC<MealsListProps> = ({ meals, loading, error, categoryNa
                 {meals.map((meal, index) => {
                     console.log(
                         `MealsList.tsx: Meal ID: ${meal.idMeal}, meal.strCategory: ${meal.strCategory}, categoryName prop: ${categoryName}`,
-                    ) // ДОДАЙТЕ ЦЕЙ ЛОГ
+                    )
                     const targetCategory = categoryName || meal.strCategory || "unknown"
-                    console.log(`MealsList.tsx: Generated NavLink to: /${targetCategory}/${meal.idMeal}`) // ДОДАЙТЕ ЦЕЙ ЛОГ
+                    console.log(`MealsList.tsx: Generated NavLink to: /${targetCategory}/${meal.idMeal}`)
                     return (
                         <NavLink
                             key={meal.idMeal}

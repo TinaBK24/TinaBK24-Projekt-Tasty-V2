@@ -1,7 +1,7 @@
 import { useEffect, useState, useLayoutEffect, useRef } from "react";
 import type { ICategory } from "../interfaces/ICategory";
 import { fetchCategories } from "../lib/api/featches";
-import { NavLink, useNavigate } from "react-router-dom"; // Додав useNavigate
+import { NavLink, useNavigate } from "react-router-dom";
 import Loading from "./Loading";
 import ErrorDisplay from "./ErrorDisplay";
 
@@ -14,7 +14,7 @@ const CategoriesList = () => {
     const navigate = useNavigate();
 
 
-    // Визначаємо статичний об'єкт для "Surprise Me!" (рандомної категорії)
+    // Визначаємо статичний об'єкт для "Random" (рандомної категорії)
     // Він буде доданий в кінець списку
     const randomCategory: ICategory = {
         idCategory: "random", // Унікальний ID для цього елемента
@@ -91,9 +91,9 @@ const CategoriesList = () => {
         return (row + col) % 2 === 0 ? 'even' : 'odd';
     };
 
-    // Обробник кліку для "Surprise Me!"
+    // Обробник кліку для "Random"
     const handleRandomClick = () => {
-        // Фільтруємо, щоб отримати лише реальні категорії (без "Surprise Me!" елемента)
+        // Фільтруємо, щоб отримати лише реальні категорії (без "Random" елемента)
         const realCategories = categories.filter(cat => cat.idCategory !== "random");
 
         if (realCategories.length > 0) {
